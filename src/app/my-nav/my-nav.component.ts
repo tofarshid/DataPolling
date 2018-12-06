@@ -15,21 +15,12 @@ export class MyNavComponent {
 
   @ViewChild('drawer') drawer: MatSidenav;
   @Input() value: number;
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches)
-    );
+
 
   constructor(private breakpointObserver: BreakpointObserver,
     router: Router) {
     
     this.value = 0;
-
-    router.events.pipe(
-      withLatestFrom(this.isHandset$),
-      filter(([a, b]) => b && a instanceof NavigationEnd )
-    ).subscribe(_ => this.drawer != undefined ? this.drawer.close(): '');
-
   }
 
   displayPBar() {

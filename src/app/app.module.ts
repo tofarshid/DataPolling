@@ -39,6 +39,8 @@ import { MyNavComponent } from './my-nav/my-nav.component';
 import { NgProfileComponent } from './ng-profile/ng-profile.component';
 import { CloudComponent } from './cloud/cloud.component';
 
+import { NgProfileModule } from './ng-profile/ngprofile.module';
+
 const routes: Routes = [
   {
     path: '',
@@ -80,8 +82,8 @@ const routes: Routes = [
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatBadgeModule
-
+    MatBadgeModule,
+    NgProfileModule
   ], 
   providers: [],
   bootstrap: [AppComponent]
