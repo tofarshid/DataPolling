@@ -1,6 +1,10 @@
-# TestModule
+# DataPolling
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.1.
+
+
+![Image description](http://simpleideas.com.au/git-images/datapolling.mov.gif)
+
 
 ## Development server
 
