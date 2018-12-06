@@ -9,7 +9,7 @@
 		<div #textData class="textData"><span class="empty-cell">(data)</span></div>
 	</mat-card-content>
 	<mat-card-actions>
-		<button mat-button #start class="mat-raised-button" >Start</button>
+		<button mat-button #start class="mat-raised-button" [disabled]="btnDisable" (click)="startClick()">Start</button>
 		<button mat-button #end class="mat-raised-button">Stop</button>
 		<br><br>
 	</mat-card-actions>

@@ -17,13 +17,14 @@ export class PollingComponent implements OnInit {
   @ViewChild('end') endButton: ElementRef;
   @ViewChild('textData') textData: ElementRef;
   value = 0;
+  btnDisable = false;
   ngOnInit() {
 
   	let start$ = fromEvent(this.startButton.nativeElement, 'click');
   	let stop$ = fromEvent(this.endButton.nativeElement, 'click');
 
   	const dataStream = () => {
-  		return startPolling(1000).pipe(
+  		return startPolling(2000).pipe(
   			tap( x => { this.textData.nativeElement.innerHTML = x;   })
   		);
   	}
@@ -32,7 +33,6 @@ export class PollingComponent implements OnInit {
   	const startPolling = (interval: number) => {
   		this.value++;
   		return timer(0, interval).pipe(
-        debounceTime(1000),
 			tap(x => {console.log('Polling '+ x); this.value = x; }),
 			switchMap(_ => requestDataStream())
   		);
@@ -55,7 +55,7 @@ export class PollingComponent implements OnInit {
   	}
 
   	let main$ = start$.pipe(
-      debounceTime(2000),
+      debounceTime(1000),
   		mergeMap(x => dataStream()),
     		takeUntil( 
     			merge( stop$ ) 
@@ -63,13 +63,19 @@ export class PollingComponent implements OnInit {
   	);
 
   	const main = () => main$.subscribe({
+      next: () => {},
   		complete: () => {
   				main();
+          this.btnDisable = false;
   			}
   		}
   	);
 
   	main();
+  }
+
+  startClick(){
+    this.btnDisable = true;
   }
 }
 
