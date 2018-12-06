@@ -1,0 +1,86 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      *ngIf="(isHandset$ | async)">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/RestApi" routerLinkActive="link-active" (click)="displayPBar()">
+        <i class="material-icons">settings_applications</i>&nbsp;
+        <span>Rest / API</span>
+      </a>
+      <a mat-list-item routerLink="/ui" routerLinkActive="link-active" (click)="displayPBar()">
+        <i class="material-icons">dashboard</i>&nbsp;
+        <span>UI</span>
+      </a>
+      <a mat-list-item routerLink="/animations" routerLinkActive="link-active" (click)="displayPBar()">
+        <i class="material-icons">3d_rotation</i>&nbsp;
+        <span>Animations</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="mat-toolbar-header">
+      <div fxLayout="row" fxFlex="100%">
+        <div fxFlex="30%" ngClass.xs="top-left">
+          <div fxLayout="row" fxFlex="100%" *ngIf="isHandset$ | async" ngClass.xs="sm-padding" ngClass.sm="sm-padding">
+              <button
+                type="button"
+                class="drawer-button"
+                aria-label="Toggle sidenav"
+                mat-icon-button
+                (click)="drawer.toggle()">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+              </button>
+              <div class="my-name" fxShow="true">Farshid&nbsp;</div>
+              <div class="my-name" fxShow="true" fxShow.xs="false">Kamal</div>
+          </div>
+          <div fxLayout="row" fxFlex="100%" *ngIf="!(isHandset$ | async)">
+            <span class="my-name-desktop">Farshid Kamal</span>
+          </div>
+        </div>
+        <div fxFlex="63%" class="one_two">
+          <div fxLayout="row" fxFlex="50%" [fxLayout]="direction" *ngIf="!(isHandset$ | async)">
+            <div fxFlex="" class="one_one">
+              <mat-nav-list>
+                <a mat-list-item routerLink="/RestApi" routerLinkActive="link-active"
+                  (click)="displayPBar()">
+                  <i class="material-icons">settings_applications</i>&nbsp;
+                  <span>Rest&nbsp;/&nbsp;API</span>
+                </a>
+              </mat-nav-list>
+            </div>
+            <div fxFlex="" class="one_one">
+              <mat-nav-list>
+                <a mat-list-item routerLink="/ui" routerLinkActive="link-active" (click)="displayPBar()">
+                  <i class="material-icons">dashboard</i>&nbsp;
+                  <span>UI</span>
+                </a>
+              </mat-nav-list>
+            </div>
+            <div fxFlex="" class="one_one">
+              <mat-nav-list>
+                <a mat-list-item routerLink="/animations" routerLinkActive="link-active" (click)="displayPBar()">
+                  <i class="material-icons">3d_rotation</i>&nbsp;
+                  <span>Animations</span>
+                </a>
+              </mat-nav-list>
+            </div>
+          </div>
+        </div>
+        <div fxFlex="7%" class="git-padding">
+          <a href="http://github.com/tofarshid">
+            <i class="git-icon fa fa-github" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </mat-toolbar>
+    
+    <!-- Add Content Here -->
+    <div [ngStyle]="{'width': value + '%'}" class="bar"></div>
+    <app-master-container>
+      
+    </app-master-container>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>
