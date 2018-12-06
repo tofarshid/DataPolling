@@ -5,17 +5,13 @@
       *ngIf="(isHandset$ | async)">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/RestApi" routerLinkActive="link-active" (click)="displayPBar()">
+      <a mat-list-item routerLink="/ngProfile" routerLinkActive="link-active" (click)="displayPBar()">
         <i class="material-icons">settings_applications</i>&nbsp;
         <span>Rest / API</span>
       </a>
-      <a mat-list-item routerLink="/ui" routerLinkActive="link-active" (click)="displayPBar()">
+      <a mat-list-item routerLink="/cloud" routerLinkActive="link-active" (click)="displayPBar()">
         <i class="material-icons">dashboard</i>&nbsp;
-        <span>UI</span>
-      </a>
-      <a mat-list-item routerLink="/animations" routerLinkActive="link-active" (click)="displayPBar()">
-        <i class="material-icons">3d_rotation</i>&nbsp;
-        <span>Animations</span>
+        <span>Cloud</span>
       </a>
     </mat-nav-list>
   </mat-sidenav>
@@ -43,26 +39,18 @@
           <div fxLayout="row" fxFlex="50%" [fxLayout]="direction" *ngIf="!(isHandset$ | async)">
             <div fxFlex="" class="one_one">
               <mat-nav-list>
-                <a mat-list-item routerLink="/RestApi" routerLinkActive="link-active"
+                <a mat-list-item routerLink="/ngProfile" routerLinkActive="link-active"
                   (click)="displayPBar()">
                   <i class="material-icons">settings_applications</i>&nbsp;
-                  <span>Rest&nbsp;/&nbsp;API</span>
+                  <span>Angular</span>
                 </a>
               </mat-nav-list>
             </div>
             <div fxFlex="" class="one_one">
               <mat-nav-list>
-                <a mat-list-item routerLink="/ui" routerLinkActive="link-active" (click)="displayPBar()">
+                <a mat-list-item routerLink="/cloud" routerLinkActive="link-active" (click)="displayPBar()">
                   <i class="material-icons">dashboard</i>&nbsp;
-                  <span>UI</span>
-                </a>
-              </mat-nav-list>
-            </div>
-            <div fxFlex="" class="one_one">
-              <mat-nav-list>
-                <a mat-list-item routerLink="/animations" routerLinkActive="link-active" (click)="displayPBar()">
-                  <i class="material-icons">3d_rotation</i>&nbsp;
-                  <span>Animations</span>
+                  <span>Cloud</span>
                 </a>
               </mat-nav-list>
             </div>
