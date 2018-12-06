@@ -54,6 +54,9 @@ export class PollingComponent implements OnInit {
   		);
   	}
 
+    start$ = fromEvent(this.startButton.nativeElement, 'click');
+    stop$ = fromEvent(this.endButton.nativeElement, 'click');
+
   	let main$ = start$.pipe(
       debounceTime(1000),
   		mergeMap(x => dataStream()),
@@ -72,6 +75,7 @@ export class PollingComponent implements OnInit {
   	);
 
   	main();
+
   }
 
   startClick(){

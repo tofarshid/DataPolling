@@ -13,7 +13,8 @@ import { PollingComponent } from './polling/polling.component';
 
 @NgModule({
   declarations: [
-  	PollingComponent],
+  	  PollingComponent
+    ],
   imports: [
     CommonModule,
     AppRoutingModule,
@@ -27,6 +28,7 @@ import { PollingComponent } from './polling/polling.component';
 
   ],
   exports: [
-  	PollingComponent],
+  	  PollingComponent
+    ],
 })
 export class NgProfileModule { }
