@@ -1,3 +1,6 @@
+.init{
+	padding: 0px 15px;
+}
 .mat-raised-button {
 	padding: 5px 30px;
 	margin-right: 10px;
@@ -21,4 +24,19 @@
 }
 .empty-cell{
 	text-align: center;
+}
+
+.link-active span{
+	border-bottom: 2px solid pink;
+}
+
+.git-icon {
+  font-size: 30px;
+  padding: 5px;
+  float: right;
+  color: pink;
+}
+
+.sm-padding {
+  padding-top: 10px;
 }

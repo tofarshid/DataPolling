@@ -34,36 +34,19 @@ import {
 
 // add
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MasterContainerComponent } from './master-container/master-container.component';
-import { MyNavComponent } from './my-nav/my-nav.component';
+
 import { NgProfileComponent } from './ng-profile/ng-profile.component';
-import { CloudComponent } from './cloud/cloud.component';
 
 import { NgProfileModule } from './ng-profile/ngprofile.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'ngProfile',
-    pathMatch: 'full'
-  },
-  {
-   path: 'ngProfile',
-    component: NgProfileComponent
-  },
-  {
-    path: 'cloud',
-    component: CloudComponent
-  }, 
+
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyNavComponent,
-    MasterContainerComponent,
     NgProfileComponent,
-    CloudComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +61,6 @@ const routes: Routes = [
     MatCardModule,
     MatGridListModule,
     FlexLayoutModule,
-    RouterModule.forRoot(routes),
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
