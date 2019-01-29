@@ -38,7 +38,7 @@ export class PollingComponent implements OnInit {
   		);
   	}
 
-  	function requestDataStream() {
+  	const requestDataStream = () => {
 
   		// data mapping
   		const mapData = (response) => { 
@@ -53,9 +53,6 @@ export class PollingComponent implements OnInit {
   			switchMap((data) => mapData(data))
   		);
   	}
-
-    start$ = fromEvent(this.startButton.nativeElement, 'click');
-    stop$ = fromEvent(this.endButton.nativeElement, 'click');
 
   	let main$ = start$.pipe(
       debounceTime(1000),
