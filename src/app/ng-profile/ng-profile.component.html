@@ -3,10 +3,10 @@
     <mat-toolbar color="primary" class="mat-toolbar-header">
       <div fxLayout="row" fxFlex="100%">
         <div fxFlex="30%" ngClass.xs="top-left">
-          <div fxLayout="row" fxFlex="100%" *ngIf="isHandset$ | async" ngClass.xs="sm-padding" ngClass.sm="sm-padding">
+          <div fxLayout="row" fxFlex="100%" ngClass.xs="sm-padding" ngClass.sm="sm-padding">
               <div class="my-name" fxShow="true">Test Module</div>
           </div>
-          <div fxLayout="row" fxFlex="100%" *ngIf="!(isHandset$ | async)">
+          <div fxLayout="row" fxFlex="100%">
             <span class="my-name-desktop">Farshid Kamal</span>
           </div>
         </div>
